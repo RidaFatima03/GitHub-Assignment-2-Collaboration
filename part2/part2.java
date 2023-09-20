@@ -50,4 +50,26 @@ public class part2 {
     }
     //Ilayda
 
+    //Anıl
+
+    public void sumOf(int[] arr) {
+
+        int sum_of_odds = 0;
+        int sum_of_evens = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] % 2 == 0) {
+
+                sum_of_evens += arr[i];
+            }
+            else {
+                sum_of_odds += arr[i];
+            }
+        }
+        System.out.println("Sum of evens are: " + (sum_of_evens-1));
+        System.out.println("Sum of odds are: " + (sum_of_odds-1));
+
+    }
+
 }
