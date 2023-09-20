@@ -2,6 +2,7 @@ package part2;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
+
 //Amina
 public class part2 {
 
@@ -50,63 +51,36 @@ public class part2 {
 
         scanner.close();
     }
+
     //Ilayda
-
-    //Anıl
-
-    public static void sumOddAndEvenIndexes( int[] arr ) {
-        //int[] arr = randNum();
-        int sum_of_odds = 0;
-        int sum_of_evens = 0;
-
-        for (int i = 0; i < arr.length; i++) {
-
-            if (arr[i] % 2 == 0) {
-
-                sum_of_evens += arr[i];
-            }
-            else {
-                sum_of_odds += arr[i];
-            }
-        }
-        System.out.println("Sum of evens are: " + (sum_of_evens-1));
-        System.out.println("Sum of odds are: " + (sum_of_odds-1));
-
-    }
-
     public static int findMaxNumber ( int[] arr)
-    {
-        //int[] arr = randNum();
-        int maxNumber = -1;
-        for( int i = 0; i < arr.length; i++)
         {
-            if( arr[i] > maxNumber )
+            int maxNumber = -1;
+            for( int i = 0; i < arr.length; i++)
             {
-                maxNumber = arr[i];
+                if( arr[i] > maxNumber )
+                {
+                    maxNumber = arr[i];
+                }
             }
+            return maxNumber;
         }
-        return maxNumber;
-    }
-      
-    public static int findMinNumber (int[] arr)
-    {
-        //int[] arr = randNum();
-        int minNumber = 101;
-        for( int i = 0; i < arr.length; i++)
+        
+        public static int findMinNumber (int[] arr)
         {
-            if( arr[i] < minNumber )
+            int minNumber = 101;
+            for( int i = 0; i < arr.length; i++)
             {
-                minNumber = arr[i];
+                if( arr[i] < minNumber )
+                {
+                    minNumber = arr[i];
+                }
             }
+            return minNumber;
         }
-        return minNumber;
-    }
-
+   
+    //Rida
     public static String findAverageAndDifferences(int[] originalArray){
-        //int[] originalArray = randNum();
-
-        //System.out.println(Arrays.toString(originalArray()));
-
         int[] averageArray = new int[originalArray.length];
 
         int sum = 0;
@@ -124,4 +98,22 @@ public class part2 {
         return Arrays.toString(averageArray);
     }
 
+    //Anıl
+    public static void sumOddAndEvenIndexes( int[] arr ) {
+        int sum_of_odds = 0;
+        int sum_of_evens = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (i % 2 == 0) {
+
+                sum_of_evens += arr[i];
+            }
+            else {
+                sum_of_odds += arr[i];
+            }
+        }
+        System.out.println("Sum of evens are: " + (sum_of_evens-1));
+        System.out.println("Sum of odds are: " + (sum_of_odds-1));
+    }
 }
