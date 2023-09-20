@@ -11,7 +11,6 @@ public class part2 {
             int randsom = rand.nextInt(101);
             array[i] = randsom;
         }
-        
 
             
     }
@@ -96,5 +95,23 @@ public class part2 {
         return minNumber;
     }
 
+    public int[] findAverageAndDifferences(){
+        int[] originalArray; // need to get from amina's methods
+
+        int[] averageArray;
+        int sum = 0;
+
+        for (int x = 0; x < originalArray.length; x++){
+            sum = sum + originalArray[x];
+        }
+        
+        int average = sum / originalArray.length;
+        
+        for (int x = 0; x < originalArray.length; x++){
+            averageArray[x] = originalArray[x] - average;
+        }
+
+        return averageArray;
+    }
 
 }
