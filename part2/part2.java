@@ -3,17 +3,15 @@ import java.util.Scanner;
 import java.util.Random;
 //Amina
 public class part2 {
-    public static void main(String[] args) {
-        int size = 10;
+    public static void randNum (int size) {
+        int length = size;
         Random rand = new Random();
-        int array[] = new int[size];
+        int array[] = new int[length];
         for (int i = 0; i < array.length; i ++){
             int randsom = rand.nextInt(101);
             array[i] = randsom;
         }
-        for (int i = 0; i < array.length; i ++){
-            System.out.print(array[i]);
-        }
+        
 
             
     }
