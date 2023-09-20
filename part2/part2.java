@@ -1,21 +1,24 @@
 package part2;
 import java.util.Scanner;
+import java.util.Arrays;
 import java.util.Random;
 //Amina
 public class part2 {
-    public static void randNum (int size) {
-        int length = size;
+
+    static int length = 10;
+
+    public static int[] randNum () {
         Random rand = new Random();
         int array[] = new int[length];
         for (int i = 0; i < array.length; i ++){
             int randsom = rand.nextInt(101);
             array[i] = randsom;
         }
-
-            
+        return array;
     }
+
     //Parinaz
-    public void displayMenu() {
+    public static void displayMenu() {
         System.out.println("Menu:");
         System.out.println("1. Find minimum and maximum");
         System.out.println("2. Find average and differences from average");
@@ -25,17 +28,19 @@ public class part2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice;
+        int[] array = randNum();
         do {
-            arrayOperations.displayMenu();
+            displayMenu();
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
 
             if (choice == 1) {
-                arrayOperations.findMinMax();
+                System.out.println("The max number is: " + findMaxNumber(array));
+                System.out.println("The min number is: " + findMinNumber(array));
             } else if (choice == 2) {
-                arrayOperations.findAverageAndDifferences();
+                System.out.println("The difference array is: " + findAverageAndDifferences(array));
             } else if (choice == 3) {
-                arrayOperations.sumOddAndEvenIndexes();
+                sumOddAndEvenIndexes(array);
             } else if (choice == 4) {
                 System.out.println("Exiting the program.");
             } else {
@@ -49,8 +54,8 @@ public class part2 {
 
     //Anıl
 
-    public void sumOf(int[] arr) {
-
+    public static void sumOddAndEvenIndexes( int[] arr ) {
+        //int[] arr = randNum();
         int sum_of_odds = 0;
         int sum_of_evens = 0;
 
@@ -69,9 +74,10 @@ public class part2 {
 
     }
 
-    public int findMaxNumber ( Array arr)
+    public static int findMaxNumber ( int[] arr)
     {
-        int maxNumber = ar[0];
+        //int[] arr = randNum();
+        int maxNumber = -1;
         for( int i = 0; i < arr.length; i++)
         {
             if( arr[i] > maxNumber )
@@ -82,12 +88,13 @@ public class part2 {
         return maxNumber;
     }
       
-    public int findMinNumber ( Array arr)
+    public static int findMinNumber (int[] arr)
     {
-        int minNumber = arr[0];
+        //int[] arr = randNum();
+        int minNumber = 101;
         for( int i = 0; i < arr.length; i++)
         {
-            if( arr[i] > minNumber )
+            if( arr[i] < minNumber )
             {
                 minNumber = arr[i];
             }
@@ -95,10 +102,13 @@ public class part2 {
         return minNumber;
     }
 
-    public int[] findAverageAndDifferences(){
-        int[] originalArray; // need to get from amina's methods
+    public static String findAverageAndDifferences(int[] originalArray){
+        //int[] originalArray = randNum();
 
-        int[] averageArray;
+        //System.out.println(Arrays.toString(originalArray()));
+
+        int[] averageArray = new int[originalArray.length];
+
         int sum = 0;
 
         for (int x = 0; x < originalArray.length; x++){
@@ -111,7 +121,7 @@ public class part2 {
             averageArray[x] = originalArray[x] - average;
         }
 
-        return averageArray;
+        return Arrays.toString(averageArray);
     }
 
 }
